@@ -1,0 +1,22 @@
+genes a, b;
+parents parent1, parent2;
+generation F1;
+
+dom: A -> a;
+dom: B -> b;
+
+set label A = “Hazel eyes”;
+set label a = “Blue eyes”;
+set label B = “Brown hair”;
+set label b = “Blond hair”;
+
+set genotype parent1 = AaBb;
+set genotype parent2 = AaBb;
+
+find genotype bb;
+
+create F1 = cross parent1 x parent2;
+
+print F1;
+print genotype(all);
+print genotype(bb);
