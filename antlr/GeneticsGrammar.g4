@@ -44,7 +44,6 @@ GENOTYPE: 'genotype';
 
 //computations
 FIND: 'find';
-CREATE: 'create';
 CROSS: 'cross';
 PRED: 'pred';
 ESTIMATE: 'estimate';
@@ -81,12 +80,12 @@ assigments: SET field id '=' expresion ';'
             | DOM ':'  id  '->'  id ';'
             | SET field id '=' computations ';';
 
-field: LABEL | PHENOTYPE |DOM | CODOMINANCE | LOCATION | GENOTYPE;
+field: LABEL | PHENOTYPE | DOM | CODOMINANCE | LOCATION | GENOTYPE;
 
 computations: FIND  field  id ';'
               | PRED  id+ ';'
-              | ESTIMATE  id  number';'
-              | CREATE id '=' CROSS id CROSS_OPERATION id ';';
+              | ESTIMATE  id  number ';'
+              | CROSS id CROSS_OPERATION id ';' ;
 
 flow_structure: IF  condition  THEN  statements+?  ELSE  statements  END ';'
                 | condition '?' condition ':' statements ';'
